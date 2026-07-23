@@ -1,0 +1,541 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 4420
+>>
+stream
+0.5670000000000001 w
+0 G
+0.15 0.39 0.92 rg
+0. 841.8899999999999864 595.2799999999999727 -127.5590551181102512 re
+f
+BT
+/F2 24 Tf
+27.5999999999999979 TL
+1. g
+56.6929133858267775 771.0238582677164914 Td
+(RoomZen OS) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+1. g
+56.6929133858267775 742.6774015748030706 Td
+(The Smart Operating System for Student Housing) Tj
+ET
+BT
+/F2 16 Tf
+18.3999999999999986 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 671.8112598425196893 Td
+(1. Executive Summary & Vision) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 649.1340944881889072 Td
+(RoomZen is an AI-powered student housing and hostel management SaaS platform designed to eliminate) Tj
+T* (paper registers, unorganized WhatsApp complaint groups, spreadsheets, and manual room allocation. By) Tj
+T* (providing digitized workflows for Students, Hostel Admins, Wardens, Repair Staff, and Gate Security Guards,) Tj
+T* (RoomZen brings operating efficiency, safety, and financial transparency to campus housing.) Tj
+ET
+BT
+/F2 16 Tf
+18.3999999999999986 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 564.0947244094487587 Td
+(2. Technology Stack & Architecture) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 541.4175590551180903 Td
+(• Framework: Next.js 16 \(App Router with Turbopack & Server Components\)) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 524.4096850393700606 Td
+(• Frontend Language & Styling: TypeScript, TailwindCSS v4, Framer Motion) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 507.4018110236219741 Td
+(• UI Components & Icons: Custom Primitives, Glassmorphism Cards, Lucide React) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 490.3939370078739444 Td
+(• Database & Backend: Supabase PostgreSQL, Row Level Security \(RLS\), Auth) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 473.3860629921259147 Td
+(• State Management: Zustand Unified Store with Hybrid Fallback State) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 456.378188976377885 Td
+(• Analytics & Visuals: Recharts \(Revenue, Occupancy, Complaint Triage\)) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 439.3703149606298552 Td
+(• Form Validation & Utilities: React Hook Form, Zod, date-fns, qrcode.react, jsPDF) Tj
+ET
+BT
+/F2 16 Tf
+18.3999999999999986 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 394.0159842519684616 Td
+(3. Multi-Role Dashboard Specifications) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.145 0.388 0.922 rg
+56.6929133858267775 371.3388188976377364 Td
+(• Hostel Owner / Admin Dashboard) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.278 0.333 0.412 rg
+70.8661417322834666 357.1655905511810261 Td
+(Real-time KPI metrics \(Total Students, Bed Occupancy, Revenue, Pending Complaints\), Recharts) Tj
+T* (analytics area charts, quick room assignment, and notice creation.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.145 0.388 0.922 rg
+56.6929133858267775 317.480551181102328 Td
+(• Student Portal & Mobile App) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.278 0.333 0.412 rg
+70.8661417322834666 303.3073228346455608 Td
+(Room details, AI-assisted complaint submission, digital weekend gate pass requests with QR generation,) Tj
+T* (mess menu schedule, and fee payment history.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.145 0.388 0.922 rg
+56.6929133858267775 263.6222834645668627 Td
+(• Chief Warden Control Desk) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.278 0.333 0.412 rg
+70.8661417322834666 249.4490551181102092 Td
+(Gate pass approval queue with guardian contact phone call trigger, complaint triage & staff assignment,) Tj
+T* (night attendance check sheet, and incident reports.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.145 0.388 0.922 rg
+56.6929133858267775 209.7640157480313974 Td
+(• Maintenance Staff Workspace) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.278 0.333 0.412 rg
+70.8661417322834666 195.5907874015747439 Td
+(Work order job board \(HVAC, Plumbing, Electrical, Wi-Fi\), status transitions \(Open -> In Progress ->) Tj
+T* (Resolved\), and repair completion photo uploads.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.145 0.388 0.922 rg
+56.6929133858267775 155.9057480314959321 Td
+(• Security Guard Gate Portal) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.278 0.333 0.412 rg
+70.8661417322834666 141.7325196850392786 Td
+(Live QR Code pass scanner, student hash verifier, visitor check-in/check-out register, and gate exit) Tj
+T* (timestamp logging.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 2952
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F2 16 Tf
+18.3999999999999986 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 785.1970866141732586 Td
+(4. Supabase Database Schema Architecture) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 762.5199212598424765 Td
+(- users \(id, email, full_name, role, phone, avatar_url\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 746.9293700787401349 Td
+(- students \(id, user_id, student_id_number, room_id, emergency_contact, parent_name\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 731.3388188976377933 Td
+(- rooms \(id, room_number, floor, block, capacity, occupied, status, rent_amount\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 715.7482677165354517 Td
+(- complaints \(id, student_id, title, category, priority, description, status, assigned_staff_id\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 700.15771653543311 Td
+(- gate_passes \(id, student_id, reason, destination, status, qr_code_hash, approved_by\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 684.5671653543306547 Td
+(- payments \(id, invoice_no, student_id, title, amount, status, paid_date, payment_method\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 668.9766141732283131 Td
+(- visitors \(id, student_id, visitor_name, visitor_phone, relation, time_in, time_out, status\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 653.3860629921259715 Td
+(- mess_menu \(id, day_of_week, meal_type, items, special_item, calories\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 637.7955118110235162 Td
+(- announcements \(id, title, content, priority, audience, created_by\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.2 0.255 0.333 rg
+56.6929133858267775 622.2049606299212883 Td
+(- chat_messages \(id, sender_id, recipient_id, content, is_read, timestamp\)) Tj
+ET
+BT
+/F2 16 Tf
+18.3999999999999986 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 578.2679527559055259 Td
+(5. Git Team Branches & Repository Structure) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 555.5907874015747439 Td
+(• Repository: https://github.com/adhithyapandiri-a11y/SyntaxSquad.git) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 538.5829133858267141 Td
+(• Production Branch: main) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.059 0.09 0.165 rg
+56.6929133858267775 521.5750393700786844 Td
+(• Teammate Branches: sravan, shivam, umair, aryan, nishpray) Tj
+ET
+1.4173228346456694 w
+0.89 0.91 0.94 RG
+56.6929133858267775 493.2285826771653205 m
+538.5870866141731312 493.2285826771653205 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.58 0.639 0.722 rg
+56.6929133858267775 470.5514173228345953 Td
+(RoomZen Student Housing SaaS Platform — Complete Technical Documentation) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R ]
+/Count 2
+>>
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+/F6 12 0 R
+/F7 13 0 R
+/F8 14 0 R
+/F9 15 0 R
+/F10 16 0 R
+/F11 17 0 R
+/F12 18 0 R
+/F13 19 0 R
+/F14 20 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+21 0 obj
+<<
+/Producer (jsPDF 4.2.1)
+/CreationDate (D:20260723144632+05'30')
+>>
+endobj
+22 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000007765 00000 n 
+0000009590 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000004624 00000 n 
+0000004761 00000 n 
+0000007828 00000 n 
+0000007953 00000 n 
+0000008083 00000 n 
+0000008216 00000 n 
+0000008354 00000 n 
+0000008478 00000 n 
+0000008607 00000 n 
+0000008739 00000 n 
+0000008875 00000 n 
+0000009003 00000 n 
+0000009130 00000 n 
+0000009259 00000 n 
+0000009392 00000 n 
+0000009494 00000 n 
+0000009840 00000 n 
+0000009926 00000 n 
+trailer
+<<
+/Size 23
+/Root 22 0 R
+/Info 21 0 R
+/ID [ <BEE18A1E9084304926F59570FE36777C> <BEE18A1E9084304926F59570FE36777C> ]
+>>
+startxref
+10030
+%%EOF
