@@ -5,13 +5,17 @@ import { useEffect, useState } from "react";
 
 function FloatingPaths({ position }: { position: number }) {
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  if (!mounted) return null;
 
   const numPaths = isMobile ? 12 : 20;
   const paths = Array.from({ length: numPaths }, (_, i) => {
