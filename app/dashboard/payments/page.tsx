@@ -63,11 +63,11 @@ export default function PaymentsPage() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5">
-            <CreditCard className="w-7 h-7 text-violet-600" />
+          <h1 className="text-2xl font-extrabold text-[#0A0A0A] tracking-[-0.05em] flex items-center gap-2.5">
+            <CreditCard className="w-7 h-7 text-[#0A0A0A]" strokeWidth={1.5} />
             Hostel Fee & Financial Management
           </h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-[#757575] mt-1">
             Track student hostel fees, mess bills, electricity utility invoices, and download PDF receipts.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function PaymentsPage() {
         </CardHeader>
         <CardContent className="p-0 overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-slate-50 dark:bg-slate-800 text-slate-500 font-bold uppercase border-b border-slate-100 dark:border-slate-800">
+            <thead className="bg-[#FAFAFA] text-[#757575] font-bold uppercase border-b border-[rgba(0,0,0,0.06)]">
               <tr>
                 <th className="p-4">Invoice No</th>
                 <th className="p-4">Student</th>
@@ -91,17 +91,17 @@ export default function PaymentsPage() {
                 <th className="p-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+            <tbody className="divide-y divide-[rgba(0,0,0,0.04)]">
               {payments.map((pay) => (
-                <tr key={pay.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                  <td className="p-4 font-mono font-bold text-slate-900 dark:text-white">{pay.invoiceNo}</td>
+                <tr key={pay.id} className="hover:bg-[#FAFAFA]">
+                  <td className="p-4 font-mono font-bold text-[#0A0A0A]">{pay.invoiceNo}</td>
                   <td className="p-4">
-                    <p className="font-bold text-slate-900 dark:text-white">{pay.studentName}</p>
-                    <p className="text-[10px] text-slate-500">Room {pay.roomNumber}</p>
+                    <p className="font-bold text-[#0A0A0A]">{pay.studentName}</p>
+                    <p className="text-[10px] text-[#757575]">Room {pay.roomNumber}</p>
                   </td>
-                  <td className="p-4 font-medium text-slate-800 dark:text-slate-200">{pay.title}</td>
-                  <td className="p-4 font-bold text-slate-900 dark:text-white">{formatCurrency(pay.amount)}</td>
-                  <td className="p-4 text-slate-500">{formatDate(pay.dueDate)}</td>
+                  <td className="p-4 font-medium text-[#0A0A0A]">{pay.title}</td>
+                  <td className="p-4 font-bold text-[#0A0A0A]">{formatCurrency(pay.amount)}</td>
+                  <td className="p-4 text-[#757575]">{formatDate(pay.dueDate)}</td>
                   <td className="p-4">
                     <Badge variant={pay.status === 'paid' ? 'success' : 'warning'}>{pay.status}</Badge>
                   </td>
@@ -112,7 +112,7 @@ export default function PaymentsPage() {
                       </Button>
                     ) : (
                       <Button size="sm" variant="outline" onClick={() => generatePDFReceipt(pay)}>
-                        <Download className="w-3.5 h-3.5 mr-1" /> PDF Receipt
+                        <Download className="w-3.5 h-3.5 mr-1 text-[#0A0A0A]" strokeWidth={1.5} /> PDF Receipt
                       </Button>
                     )}
                   </td>
@@ -134,7 +134,7 @@ export default function PaymentsPage() {
         >
           <div className="space-y-4">
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-2">
                 Select Payment Method
               </label>
               <div className="grid grid-cols-3 gap-2">
@@ -145,8 +145,8 @@ export default function PaymentsPage() {
                     onClick={() => setPaymentMethod(m)}
                     className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all ${
                       paymentMethod === m
-                        ? 'border-blue-600 bg-blue-50 dark:bg-blue-950 text-blue-600'
-                        : 'border-slate-200 dark:border-slate-800 text-slate-600'
+                        ? 'border-[#0A0A0A] bg-[#FAFAFA] text-[#0A0A0A]'
+                        : 'border-[rgba(0,0,0,0.06)] text-[#757575]'
                     }`}
                   >
                     {m}
@@ -155,22 +155,22 @@ export default function PaymentsPage() {
               </div>
             </div>
 
-            <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 text-xs space-y-1">
+            <div className="p-4 rounded-2xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)] text-xs space-y-1 text-[#0A0A0A]">
               <div className="flex justify-between">
                 <span>Subtotal:</span>
                 <span className="font-bold">{formatCurrency(selectedPayForModal.amount)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Platform Gateway Fee:</span>
-                <span className="font-bold text-emerald-600">FREE</span>
+                <span className="font-bold text-[#757575]">FREE</span>
               </div>
-              <div className="flex justify-between border-t pt-1 font-extrabold text-sm">
+              <div className="flex justify-between border-t border-[rgba(0,0,0,0.06)] pt-2 font-extrabold text-sm">
                 <span>Total Amount:</span>
-                <span className="text-blue-600">{formatCurrency(selectedPayForModal.amount)}</span>
+                <span className="text-[#0A0A0A]">{formatCurrency(selectedPayForModal.amount)}</span>
               </div>
             </div>
 
-            <div className="flex justify-end gap-2 pt-3 border-t border-slate-100 dark:border-slate-800">
+            <div className="flex justify-end gap-2 pt-4 border-t border-[rgba(0,0,0,0.06)]">
               <Button variant="ghost" onClick={() => setSelectedPayForModal(null)}>Cancel</Button>
               <Button variant="success" onClick={handlePayConfirm}>
                 Confirm & Pay {formatCurrency(selectedPayForModal.amount)}

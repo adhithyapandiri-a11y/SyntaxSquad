@@ -23,30 +23,30 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FAFAFA] flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link href="/" className="inline-flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-            <Building2 className="w-7 h-7" />
+          <div className="w-12 h-12 rounded-2xl bg-white border border-[rgba(0,0,0,0.06)] shadow-sm flex items-center justify-center text-[#0A0A0A]">
+            <Building2 className="w-7 h-7" strokeWidth={1.5} />
           </div>
-          <span className="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <span className="text-3xl font-extrabold text-[#0A0A0A] tracking-[-0.05em]">
             RoomZen
           </span>
         </Link>
         
-        <h2 className="mt-6 text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+        <h2 className="mt-6 text-2xl font-bold text-[#0A0A0A] tracking-[-0.05em]">
           Create your RoomZen Account
         </h2>
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+        <p className="mt-2 text-sm text-[#757575]">
           Get started with digital student housing management
         </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white dark:bg-slate-900 py-8 px-6 shadow-xl rounded-3xl border border-slate-200/80 dark:border-slate-800 sm:px-10">
+        <div className="bg-white py-8 px-6 shadow-[0_2px_8px_rgba(0,0,0,0.02)] rounded-2xl border border-[rgba(0,0,0,0.06)] sm:px-10">
           <form className="space-y-4" onSubmit={handleSignup}>
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                 Full Name
               </label>
               <input
@@ -55,12 +55,12 @@ export default function SignupPage() {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="e.g. Alex Rivera"
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none dark:text-white"
+                className="w-full px-4 py-2.5 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-xl focus:ring-1 focus:ring-[#0A0A0A] focus:outline-none text-[#0A0A0A] placeholder:text-[#757575]/50"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                 Email Address
               </label>
               <input
@@ -69,18 +69,18 @@ export default function SignupPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="alex@university.edu"
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none dark:text-white"
+                className="w-full px-4 py-2.5 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-xl focus:ring-1 focus:ring-[#0A0A0A] focus:outline-none text-[#0A0A0A] placeholder:text-[#757575]/50"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                 Account Role
               </label>
               <select
                 value={role}
                 onChange={(e) => setRole(e.target.value as UserRole)}
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none dark:text-white capitalize"
+                className="w-full px-4 py-2.5 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-xl focus:ring-1 focus:ring-[#0A0A0A] focus:outline-none text-[#0A0A0A] capitalize"
               >
                 <option value="student">Student Account</option>
                 <option value="admin">Hostel Owner / Administrator</option>
@@ -91,7 +91,7 @@ export default function SignupPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                 Password
               </label>
               <input
@@ -99,19 +99,19 @@ export default function SignupPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none dark:text-white"
+                className="w-full px-4 py-2.5 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-xl focus:ring-1 focus:ring-[#0A0A0A] focus:outline-none text-[#0A0A0A]"
               />
             </div>
 
-            <Button type="submit" variant="primary" className="w-full py-3 mt-2">
+            <Button type="submit" variant="primary" className="w-full py-3 mt-2 bg-[#0A0A0A] text-white hover:bg-[#222222] border border-[rgba(0,0,0,0.06)] shadow-sm">
               Create Account & Launch
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ml-1" strokeWidth={1.5} />
             </Button>
           </form>
 
-          <div className="mt-6 text-center text-xs text-slate-500">
+          <div className="mt-6 text-center text-xs text-[#757575]">
             Already have an account?{' '}
-            <Link href="/login" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+            <Link href="/login" className="font-semibold text-[#0A0A0A] hover:underline">
               Sign in
             </Link>
           </div>

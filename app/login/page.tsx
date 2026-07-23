@@ -36,62 +36,62 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FAFAFA] flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         
         {/* Brand Logo */}
         <Link href="/" className="inline-flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-            <Building2 className="w-7 h-7" />
+          <div className="w-12 h-12 rounded-2xl bg-white border border-[rgba(0,0,0,0.06)] shadow-sm flex items-center justify-center text-[#0A0A0A]">
+            <Building2 className="w-7 h-7" strokeWidth={1.5} />
           </div>
-          <span className="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <span className="text-3xl font-extrabold text-[#0A0A0A] tracking-[-0.05em]">
             RoomZen
           </span>
         </Link>
         
-        <h2 className="mt-6 text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+        <h2 className="mt-6 text-2xl font-bold text-[#0A0A0A] tracking-[-0.05em]">
           Welcome back to RoomZen OS
         </h2>
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+        <p className="mt-2 text-sm text-[#757575]">
           Sign in to access your student housing workspace
         </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white dark:bg-slate-900 py-8 px-6 shadow-xl rounded-3xl border border-slate-200/80 dark:border-slate-800 sm:px-10">
+        <div className="bg-white py-8 px-6 shadow-[0_2px_8px_rgba(0,0,0,0.02)] rounded-2xl border border-[rgba(0,0,0,0.06)] sm:px-10">
           
           {/* Quick Demo Login Preset Buttons */}
-          <div className="mb-6 p-3 rounded-2xl bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200/60 dark:border-blue-800/40">
-            <div className="flex items-center gap-1.5 mb-2 text-xs font-bold text-blue-700 dark:text-blue-300">
-              <Sparkles className="w-4 h-4 text-amber-500" />
+          <div className="mb-6 p-4 rounded-2xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)]">
+            <div className="flex items-center gap-1.5 mb-2 text-xs font-bold text-[#0A0A0A]">
+              <Sparkles className="w-4 h-4 text-[#757575]" strokeWidth={1.5} />
               <span>Instant Demo 1-Click Login</span>
             </div>
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={() => handleQuickDemoRole('admin')}
-                className="px-2.5 py-1.5 text-xs font-medium bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-xl border hover:border-blue-500 text-left transition-all"
+                className="px-2.5 py-1.5 text-xs font-medium bg-white text-[#0A0A0A] rounded-xl border border-[rgba(0,0,0,0.06)] hover:bg-[#FAFAFA] text-left transition-all"
               >
                 🏢 Admin / Owner
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickDemoRole('student')}
-                className="px-2.5 py-1.5 text-xs font-medium bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-xl border hover:border-emerald-500 text-left transition-all"
+                className="px-2.5 py-1.5 text-xs font-medium bg-white text-[#0A0A0A] rounded-xl border border-[rgba(0,0,0,0.06)] hover:bg-[#FAFAFA] text-left transition-all"
               >
                 🎓 Student Portal
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickDemoRole('warden')}
-                className="px-2.5 py-1.5 text-xs font-medium bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-xl border hover:border-indigo-500 text-left transition-all"
+                className="px-2.5 py-1.5 text-xs font-medium bg-white text-[#0A0A0A] rounded-xl border border-[rgba(0,0,0,0.06)] hover:bg-[#FAFAFA] text-left transition-all"
               >
                 🛡️ Warden Desk
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickDemoRole('staff')}
-                className="px-2.5 py-1.5 text-xs font-medium bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-xl border hover:border-amber-500 text-left transition-all"
+                className="px-2.5 py-1.5 text-xs font-medium bg-white text-[#0A0A0A] rounded-xl border border-[rgba(0,0,0,0.06)] hover:bg-[#FAFAFA] text-left transition-all"
               >
                 🔧 Repair Staff
               </button>
@@ -102,10 +102,10 @@ export default function LoginPage() {
             
             {/* Role Selection Tabs */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1.5">
                 Select Your Role
               </label>
-              <div className="grid grid-cols-3 gap-1 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl">
+              <div className="grid grid-cols-3 gap-1 p-1 bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)] rounded-xl">
                 {(['admin', 'student', 'warden'] as UserRole[]).map((r) => (
                   <button
                     key={r}
@@ -113,8 +113,8 @@ export default function LoginPage() {
                     onClick={() => setSelectedRole(r)}
                     className={`py-1.5 text-xs font-semibold rounded-lg capitalize transition-all ${
                       selectedRole === r
-                        ? 'bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 shadow-sm'
-                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                        ? 'bg-white text-[#0A0A0A] shadow-[0_2px_8px_rgba(0,0,0,0.02)] border border-[rgba(0,0,0,0.04)]'
+                        : 'text-[#757575] hover:text-[#0A0A0A]'
                     }`}
                   >
                     {r}
@@ -124,7 +124,7 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                 Email Address
               </label>
               <input
@@ -132,18 +132,18 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none dark:text-white"
+                className="w-full px-4 py-2.5 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-xl focus:ring-1 focus:ring-[#0A0A0A] focus:outline-none text-[#0A0A0A]"
               />
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-1">
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#757575]">
                   Password
                 </label>
                 <Link
                   href="/forgot-password"
-                  className="text-xs font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                  className="text-xs font-medium text-[#757575] hover:text-[#0A0A0A] transition-colors"
                 >
                   Forgot password?
                 </Link>
@@ -153,19 +153,19 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none dark:text-white"
+                className="w-full px-4 py-2.5 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-xl focus:ring-1 focus:ring-[#0A0A0A] focus:outline-none text-[#0A0A0A]"
               />
             </div>
 
-            <Button type="submit" variant="primary" className="w-full py-3">
+            <Button type="submit" variant="primary" className="w-full py-3 bg-[#0A0A0A] text-white hover:bg-[#222222] border border-[rgba(0,0,0,0.06)] shadow-sm">
               Sign In to Workspace
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ml-1" strokeWidth={1.5} />
             </Button>
           </form>
 
-          <div className="mt-6 text-center text-xs text-slate-500">
+          <div className="mt-6 text-center text-xs text-[#757575]">
             Don’t have an account yet?{' '}
-            <Link href="/signup" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+            <Link href="/signup" className="font-semibold text-[#0A0A0A] hover:underline">
               Create student/admin account
             </Link>
           </div>

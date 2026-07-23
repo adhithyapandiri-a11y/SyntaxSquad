@@ -35,27 +35,27 @@ export default function StudentDashboardPage() {
   const todayMenu = messMenu.find((m) => m.dayOfWeek === 'Monday') || messMenu[0];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-sans">
       
       {/* Student Welcome Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-3xl bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 text-white shadow-lg shadow-teal-500/20">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-2xl bg-white border border-[rgba(0,0,0,0.06)] shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
         <div className="flex items-center gap-4">
           <img
             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150"
             alt={currentStudent.fullName}
-            className="w-16 h-16 rounded-2xl ring-4 ring-white/30 object-cover"
+            className="w-16 h-16 rounded-2xl border border-[rgba(0,0,0,0.06)] object-cover grayscale"
           />
           <div>
             <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-bold uppercase">
+              <span className="px-2.5 py-0.5 rounded-full bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)] text-[#0A0A0A] text-xs font-bold uppercase">
                 Student Workspace
               </span>
-              <span className="text-xs text-teal-100 font-mono">{currentStudent.studentIdNumber}</span>
+              <span className="text-xs text-[#757575] font-mono">{currentStudent.studentIdNumber}</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-[-0.05em] text-[#0A0A0A] mt-1">
               Welcome, {currentStudent.fullName}!
             </h1>
-            <p className="text-sm text-teal-100 mt-0.5">
+            <p className="text-sm text-[#757575] mt-0.5">
               Room {currentStudent.roomNumber} • {currentStudent.course} ({currentStudent.batch})
             </p>
           </div>
@@ -67,14 +67,14 @@ export default function StudentDashboardPage() {
             onClick={() => setIsAiModalOpen(true)}
             variant="secondary"
             size="sm"
-            className="bg-white text-teal-800 hover:bg-teal-50 font-bold"
+            className="bg-[#0A0A0A] text-white hover:bg-[#222222] border border-[rgba(0,0,0,0.06)] shadow-sm font-bold"
           >
-            <Sparkles className="w-4 h-4 mr-1 text-amber-500" />
+            <Sparkles className="w-4 h-4 mr-1" strokeWidth={1.5} />
             Raise AI Complaint
           </Button>
           <Link href="/dashboard/gate-pass">
-            <Button variant="secondary" size="sm" className="bg-white/10 hover:bg-white/20 text-white border-0">
-              <QrCode className="w-4 h-4 mr-1" /> Request Gate Pass
+            <Button variant="secondary" size="sm" className="bg-[#FAFAFA] hover:bg-[#F0F0F0] text-[#0A0A0A] border border-[rgba(0,0,0,0.06)] shadow-sm">
+              <QrCode className="w-4 h-4 mr-1" strokeWidth={1.5} /> Request Gate Pass
             </Button>
           </Link>
         </div>
@@ -84,59 +84,59 @@ export default function StudentDashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         {/* Room Card */}
-        <Card hoverEffect>
+        <Card hoverEffect className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl shadow-sm">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <DoorOpen className="w-5 h-5 text-blue-500" />
+            <CardTitle className="flex items-center gap-2 text-[#0A0A0A] tracking-tight font-bold">
+              <DoorOpen className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
               Room Metadata
             </CardTitle>
-            <Badge variant="primary">Active Resident</Badge>
+            <Badge variant="primary" className="bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] text-[#0A0A0A]">Active Resident</Badge>
           </CardHeader>
           <CardContent className="space-y-3 text-xs">
-            <div className="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-              <span className="text-slate-500">Room Number</span>
-              <span className="font-bold text-slate-900 dark:text-white">{currentStudent.roomNumber}</span>
+            <div className="flex justify-between border-b border-[rgba(0,0,0,0.04)] pb-2">
+              <span className="text-[#757575]">Room Number</span>
+              <span className="font-bold text-[#0A0A0A]">{currentStudent.roomNumber}</span>
             </div>
-            <div className="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-              <span className="text-slate-500">Floor & Block</span>
-              <span className="font-bold text-slate-900 dark:text-white">Floor {currentStudent.floor}, {currentStudent.block}</span>
+            <div className="flex justify-between border-b border-[rgba(0,0,0,0.04)] pb-2">
+              <span className="text-[#757575]">Floor & Block</span>
+              <span className="font-bold text-[#0A0A0A]">Floor {currentStudent.floor}, {currentStudent.block}</span>
             </div>
-            <div className="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-              <span className="text-slate-500">Roommate</span>
-              <span className="font-bold text-slate-900 dark:text-white">Sophia Martinez</span>
+            <div className="flex justify-between border-b border-[rgba(0,0,0,0.04)] pb-2">
+              <span className="text-[#757575]">Roommate</span>
+              <span className="font-bold text-[#0A0A0A]">Sophia Martinez</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Wi-Fi Network</span>
-              <span className="font-bold text-emerald-600">RoomZen_5G_A204</span>
+              <span className="text-[#757575]">Wi-Fi Network</span>
+              <span className="font-bold text-[#0A0A0A]">RoomZen_5G_A204</span>
             </div>
           </CardContent>
         </Card>
 
         {/* Gate Pass Card */}
-        <Card className="md:col-span-2">
+        <Card className="md:col-span-2 bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl shadow-sm">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <QrCode className="w-5 h-5 text-teal-500" />
+            <CardTitle className="flex items-center gap-2 text-[#0A0A0A] tracking-tight font-bold">
+              <QrCode className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
               My Digital Gate Passes
             </CardTitle>
-            <Link href="/dashboard/gate-pass" className="text-xs font-semibold text-teal-600 dark:text-teal-400 hover:underline">
+            <Link href="/dashboard/gate-pass" className="text-xs font-semibold text-[#757575] hover:text-[#0A0A0A] transition-colors">
               Request Out-Pass
             </Link>
           </CardHeader>
-          <CardContent className="p-0 divide-y divide-slate-100 dark:divide-slate-800">
+          <CardContent className="p-0 divide-y divide-[rgba(0,0,0,0.04)]">
             {studentPasses.map((pass) => (
-              <div key={pass.id} className="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50">
+              <div key={pass.id} className="p-4 flex items-center justify-between hover:bg-[#FAFAFA] transition-colors">
                 <div>
                   <div className="flex items-center gap-2">
-                    <p className="text-sm font-bold text-slate-900 dark:text-white">{pass.reason}</p>
-                    <Badge variant={pass.status === 'approved' ? 'success' : 'warning'}>{pass.status}</Badge>
+                    <p className="text-sm font-bold text-[#0A0A0A]">{pass.reason}</p>
+                    <Badge variant={pass.status === 'approved' ? 'success' : 'warning'} className="bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] text-[#0A0A0A]">{pass.status}</Badge>
                   </div>
-                  <p className="text-xs text-slate-500 mt-0.5">
+                  <p className="text-xs text-[#757575] mt-0.5">
                     Destination: {pass.destination} • Valid until {formatDate(pass.returnDate)}
                   </p>
                 </div>
                 {pass.status === 'approved' && (
-                  <Button size="sm" variant="outline" onClick={() => setSelectedPassForQr(pass)}>
+                  <Button size="sm" variant="outline" className="border-[rgba(0,0,0,0.06)] text-[#0A0A0A] hover:bg-[#FAFAFA]" onClick={() => setSelectedPassForQr(pass)}>
                     View QR Pass
                   </Button>
                 )}
@@ -151,27 +151,27 @@ export default function StudentDashboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* Active Complaints */}
-        <Card>
+        <Card className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl shadow-sm">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <AlertCircle className="w-5 h-5 text-amber-500" />
+            <CardTitle className="flex items-center gap-2 text-[#0A0A0A] tracking-tight font-bold">
+              <AlertCircle className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
               My Complaints Status
             </CardTitle>
-            <Button size="sm" variant="ghost" onClick={() => setIsAiModalOpen(true)}>
+            <Button size="sm" variant="ghost" className="text-[#0A0A0A] hover:bg-[#FAFAFA]" onClick={() => setIsAiModalOpen(true)}>
               + Raise New
             </Button>
           </CardHeader>
-          <CardContent className="p-0 divide-y divide-slate-100 dark:divide-slate-800">
+          <CardContent className="p-0 divide-y divide-[rgba(0,0,0,0.04)]">
             {studentComplaints.map((cmp) => (
-              <div key={cmp.id} className="p-4 space-y-2">
+              <div key={cmp.id} className="p-4 space-y-2 hover:bg-[#FAFAFA] transition-colors">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-900 dark:text-white">{cmp.title}</span>
-                  <Badge variant={cmp.status === 'resolved' ? 'success' : 'warning'}>{cmp.status}</Badge>
+                  <span className="text-xs font-bold text-[#0A0A0A]">{cmp.title}</span>
+                  <Badge variant={cmp.status === 'resolved' ? 'success' : 'warning'} className="bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] text-[#0A0A0A]">{cmp.status}</Badge>
                 </div>
-                <p className="text-xs text-slate-500 line-clamp-2">{cmp.description}</p>
+                <p className="text-xs text-[#757575] line-clamp-2">{cmp.description}</p>
                 {cmp.estimatedFixTime && (
-                  <div className="flex items-center gap-2 text-[11px] text-indigo-600 dark:text-indigo-400 font-medium">
-                    <Clock className="w-3.5 h-3.5" /> Est. Fix Time: {cmp.estimatedFixTime}
+                  <div className="flex items-center gap-2 text-[11px] text-[#0A0A0A] font-medium">
+                    <Clock className="w-3.5 h-3.5" strokeWidth={1.5} /> Est. Fix Time: {cmp.estimatedFixTime}
                   </div>
                 )}
               </div>
@@ -180,27 +180,27 @@ export default function StudentDashboardPage() {
         </Card>
 
         {/* Mess Menu & Payments */}
-        <Card>
+        <Card className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl shadow-sm">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Utensils className="w-5 h-5 text-orange-500" />
+            <CardTitle className="flex items-center gap-2 text-[#0A0A0A] tracking-tight font-bold">
+              <Utensils className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
               Today's Mess Schedule ({todayMenu.dayOfWeek})
             </CardTitle>
-            <Link href="/dashboard/mess" className="text-xs font-semibold text-orange-600 dark:text-orange-400 hover:underline">
+            <Link href="/dashboard/mess" className="text-xs font-semibold text-[#757575] hover:text-[#0A0A0A] transition-colors">
               Full Menu
             </Link>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="p-3 rounded-xl bg-orange-50 dark:bg-orange-950/30 border border-orange-200/60 dark:border-orange-800/40">
-              <span className="text-xs font-bold text-orange-800 dark:text-orange-300 uppercase">
+            <div className="p-4 rounded-xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)]">
+              <span className="text-xs font-bold text-[#757575] uppercase">
                 {todayMenu.mealType} Special
               </span>
-              <p className="text-sm font-semibold text-slate-900 dark:text-white mt-1">
+              <p className="text-sm font-semibold text-[#0A0A0A] mt-1">
                 {todayMenu.items.join(' • ')}
               </p>
               {todayMenu.specialItem && (
-                <span className="text-[11px] text-amber-600 font-bold mt-1 block">
-                  🌟 Chef Special: {todayMenu.specialItem}
+                <span className="text-[11px] text-[#0A0A0A] font-bold mt-1 block">
+                  Chef Special: {todayMenu.specialItem}
                 </span>
               )}
             </div>
@@ -208,16 +208,16 @@ export default function StudentDashboardPage() {
             {/* Fees Widget */}
             <div className="pt-2">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-bold text-slate-700 dark:text-slate-300">Pending Invoices</span>
-                <Link href="/dashboard/payments" className="text-xs text-blue-600 font-semibold">View Payments</Link>
+                <span className="text-xs font-bold text-[#757575]">Pending Invoices</span>
+                <Link href="/dashboard/payments" className="text-xs text-[#0A0A0A] font-semibold hover:underline">View Payments</Link>
               </div>
               {studentPayments.filter((p) => p.status === 'pending').map((pay) => (
-                <div key={pay.id} className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-between">
+                <div key={pay.id} className="p-3 rounded-xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)] flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-slate-900 dark:text-white">{pay.title}</p>
-                    <p className="text-[11px] text-slate-500">Due {formatDate(pay.dueDate)}</p>
+                    <p className="text-xs font-bold text-[#0A0A0A]">{pay.title}</p>
+                    <p className="text-[11px] text-[#757575]">Due {formatDate(pay.dueDate)}</p>
                   </div>
-                  <Button size="sm" variant="primary" onClick={() => markPaymentPaid(pay.id, 'UPI')}>
+                  <Button size="sm" variant="primary" className="bg-[#0A0A0A] text-white hover:bg-[#222222]" onClick={() => markPaymentPaid(pay.id, 'UPI')}>
                     Pay {formatCurrency(pay.amount)}
                   </Button>
                 </div>

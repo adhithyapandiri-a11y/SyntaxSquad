@@ -7,7 +7,7 @@ import { CommandPalette } from '@/components/common/CommandPalette';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans">
+    <div className="min-h-screen flex bg-white text-[#0A0A0A] font-sans">
       {/* Sidebar Navigation */}
       <Sidebar />
 

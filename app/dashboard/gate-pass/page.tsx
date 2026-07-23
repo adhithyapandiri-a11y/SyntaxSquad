@@ -56,17 +56,17 @@ export default function GatePassPage() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5">
-            <QrCode className="w-7 h-7 text-teal-600" />
+          <h1 className="text-2xl font-extrabold text-[#0A0A0A] tracking-[-0.05em] flex items-center gap-2.5">
+            <QrCode className="w-7 h-7 text-[#0A0A0A]" strokeWidth={1.5} />
             Digital Gate Pass & QR System
           </h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-[#757575] mt-1">
             Request out-passes, track warden approval status, and present scannable QR passes to gate security.
           </p>
         </div>
 
         <Button variant="primary" size="sm" onClick={() => setIsRequestModalOpen(true)}>
-          <Plus className="w-4 h-4 mr-1.5" /> Request New Gate Pass
+          <Plus className="w-4 h-4 mr-1.5" strokeWidth={1.5} /> Request New Gate Pass
         </Button>
       </div>
 
@@ -80,42 +80,42 @@ export default function GatePassPage() {
                   <Badge variant={pass.status === 'approved' ? 'success' : pass.status === 'rejected' ? 'danger' : 'warning'}>
                     {pass.status.toUpperCase()}
                   </Badge>
-                  <span className="text-[10px] font-mono text-slate-400">{pass.qrCodeHash}</span>
+                  <span className="text-[10px] font-mono text-[#757575]">{pass.qrCodeHash}</span>
                 </div>
-                <CardTitle className="text-base mt-2">{pass.reason}</CardTitle>
-                <p className="text-xs text-slate-500">Destination: <span className="font-semibold text-slate-800 dark:text-slate-200">{pass.destination}</span></p>
+                <CardTitle className="text-base mt-2 tracking-tight text-[#0A0A0A]">{pass.reason}</CardTitle>
+                <p className="text-xs text-[#757575]">Destination: <span className="font-semibold text-[#0A0A0A]">{pass.destination}</span></p>
               </div>
             </CardHeader>
             <CardContent className="space-y-4">
               
-              <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 text-xs space-y-1.5">
+              <div className="p-4 rounded-2xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)] text-xs space-y-1.5">
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Student Name:</span>
-                  <span className="font-bold text-slate-900 dark:text-white">{pass.studentName} (Room {pass.roomNumber})</span>
+                  <span className="text-[#757575]">Student Name:</span>
+                  <span className="font-bold text-[#0A0A0A]">{pass.studentName} (Room {pass.roomNumber})</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Leaving Date:</span>
-                  <span className="font-medium text-slate-800 dark:text-slate-200">{formatDateTime(pass.leavingDate)}</span>
+                  <span className="text-[#757575]">Leaving Date:</span>
+                  <span className="font-medium text-[#0A0A0A]">{formatDateTime(pass.leavingDate)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Expected Return:</span>
-                  <span className="font-medium text-slate-800 dark:text-slate-200">{formatDateTime(pass.returnDate)}</span>
+                  <span className="text-[#757575]">Expected Return:</span>
+                  <span className="font-medium text-[#0A0A0A]">{formatDateTime(pass.returnDate)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Guardian Contact:</span>
-                  <span className="font-mono text-emerald-600 dark:text-emerald-400 font-bold">{pass.guardianContact}</span>
+                  <span className="text-[#757575]">Guardian Contact:</span>
+                  <span className="font-mono text-[#0A0A0A] font-bold">{pass.guardianContact}</span>
                 </div>
               </div>
 
               {/* Approval Info */}
               {pass.approvedByName && (
-                <div className="flex items-center gap-1.5 text-xs text-emerald-600 font-medium">
-                  <CheckCircle2 className="w-4 h-4" /> Approved by {pass.approvedByName}
+                <div className="flex items-center gap-1.5 text-xs text-[#0A0A0A] font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-[#0A0A0A]" strokeWidth={1.5} /> Approved by {pass.approvedByName}
                 </div>
               )}
 
               {/* Actions */}
-              <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+              <div className="pt-2 border-t border-[rgba(0,0,0,0.06)] flex items-center justify-between">
                 {pass.status === 'pending' && (
                   <div className="flex items-center gap-2">
                     <Button size="sm" variant="success" onClick={() => updateGatePassStatus(pass.id, 'approved')}>
@@ -128,7 +128,7 @@ export default function GatePassPage() {
                 )}
                 {pass.status === 'approved' && (
                   <Button size="sm" variant="primary" onClick={() => setSelectedPassForQr(pass)}>
-                    <QrCode className="w-4 h-4 mr-1.5" /> Show QR Gate Pass
+                    <QrCode className="w-4 h-4 mr-1.5 text-white" strokeWidth={1.5} /> Show QR Gate Pass
                   </Button>
                 )}
               </div>
@@ -148,17 +148,17 @@ export default function GatePassPage() {
           maxWidth="sm"
         >
           <div className="flex flex-col items-center justify-center p-4 text-center space-y-4">
-            <div className="p-4 bg-white rounded-2xl border-4 border-teal-500 shadow-xl">
+            <div className="p-6 bg-white rounded-2xl border border-[rgba(0,0,0,0.06)] shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
               <QRCodeSVG value={selectedPassForQr.qrCodeHash} size={200} />
             </div>
 
             <div>
-              <p className="font-extrabold text-lg text-slate-900 dark:text-white">{selectedPassForQr.studentName}</p>
-              <p className="text-xs text-slate-500">Room {selectedPassForQr.roomNumber} • {selectedPassForQr.destination}</p>
-              <p className="text-[11px] font-mono font-bold text-teal-600 dark:text-teal-400 mt-1">{selectedPassForQr.qrCodeHash}</p>
+              <p className="font-extrabold text-lg text-[#0A0A0A]">{selectedPassForQr.studentName}</p>
+              <p className="text-xs text-[#757575]">Room {selectedPassForQr.roomNumber} • {selectedPassForQr.destination}</p>
+              <p className="text-[11px] font-mono font-bold text-[#0A0A0A] mt-1">{selectedPassForQr.qrCodeHash}</p>
             </div>
 
-            <div className="w-full p-3 rounded-xl bg-teal-50 dark:bg-teal-950/40 border border-teal-200 text-xs text-teal-800 dark:text-teal-300">
+            <div className="w-full p-4 rounded-2xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)] text-xs text-[#0A0A0A]">
               ✓ Verified by {selectedPassForQr.approvedByName || 'Hostel Warden'}
             </div>
           </div>
@@ -175,7 +175,7 @@ export default function GatePassPage() {
         >
           <form onSubmit={handleSubmitRequest} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                 Reason for Out-Pass *
               </label>
               <input
@@ -184,12 +184,12 @@ export default function GatePassPage() {
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 placeholder="e.g. Weekend Family Function"
-                className="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border rounded-xl focus:outline-none dark:text-white"
+                className="w-full px-3 py-2 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-2xl focus:outline-none text-[#0A0A0A]"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                 Destination City / Place *
               </label>
               <input
@@ -198,13 +198,13 @@ export default function GatePassPage() {
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
                 placeholder="e.g. Boston, MA"
-                className="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border rounded-xl focus:outline-none dark:text-white"
+                className="w-full px-3 py-2 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-2xl focus:outline-none text-[#0A0A0A]"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                   Leaving Date & Time *
                 </label>
                 <input
@@ -212,11 +212,11 @@ export default function GatePassPage() {
                   required
                   value={leavingDate}
                   onChange={(e) => setLeavingDate(e.target.value)}
-                  className="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border rounded-xl focus:outline-none dark:text-white"
+                  className="w-full px-3 py-2 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-2xl focus:outline-none text-[#0A0A0A]"
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                   Expected Return *
                 </label>
                 <input
@@ -224,13 +224,13 @@ export default function GatePassPage() {
                   required
                   value={returnDate}
                   onChange={(e) => setReturnDate(e.target.value)}
-                  className="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border rounded-xl focus:outline-none dark:text-white"
+                  className="w-full px-3 py-2 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-2xl focus:outline-none text-[#0A0A0A]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
                 Guardian Phone Number *
               </label>
               <input
@@ -239,11 +239,11 @@ export default function GatePassPage() {
                 value={guardianContact}
                 onChange={(e) => setGuardianContact(e.target.value)}
                 placeholder="+1 (555) 987-0002"
-                className="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border rounded-xl focus:outline-none dark:text-white"
+                className="w-full px-3 py-2 text-sm bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-2xl focus:outline-none text-[#0A0A0A]"
               />
             </div>
 
-            <div className="flex justify-end gap-2 pt-3 border-t border-slate-100 dark:border-slate-800">
+            <div className="flex justify-end gap-2 pt-4 border-t border-[rgba(0,0,0,0.06)]">
               <Button type="button" variant="ghost" onClick={() => setIsRequestModalOpen(false)}>Cancel</Button>
               <Button type="submit" variant="primary">Submit Gate Pass Request</Button>
             </div>

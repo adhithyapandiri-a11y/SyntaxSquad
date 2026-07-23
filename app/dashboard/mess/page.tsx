@@ -23,19 +23,19 @@ export default function MessPage() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5">
-            <Utensils className="w-7 h-7 text-orange-500" />
+          <h1 className="text-2xl font-extrabold text-[#0A0A0A] tracking-[-0.05em] flex items-center gap-2.5">
+            <Utensils className="w-7 h-7 text-[#0A0A0A]" strokeWidth={1.5} />
             Mess Operations & Weekly Food Menu
           </h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-[#757575] mt-1">
             View 7-day meal schedules, calorie counts, student feedback ratings, and log meal attendance.
           </p>
         </div>
 
-        <div className="p-3 rounded-2xl bg-orange-50 dark:bg-orange-950/40 border border-orange-200 flex items-center gap-3 text-xs">
+        <div className="p-4 rounded-2xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] flex items-center gap-3 text-xs">
           <div>
-            <span className="font-bold text-slate-900 dark:text-white">Meal Attendance RSVP</span>
-            <p className="text-slate-500">{mealAttendanceCount} Students confirmed for dinner tonight</p>
+            <span className="font-bold text-[#0A0A0A]">Meal Attendance RSVP</span>
+            <p className="text-[#757575]">{mealAttendanceCount} Students confirmed for dinner tonight</p>
           </div>
           <Button
             size="sm"
@@ -58,8 +58,8 @@ export default function MessPage() {
             onClick={() => setSelectedDay(day)}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
               selectedDay === day
-                ? 'bg-orange-500 text-white shadow-md shadow-orange-500/20'
-                : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 border border-slate-200/80 dark:border-slate-800'
+                ? 'bg-[#0A0A0A] text-white shadow-[0_2px_8px_rgba(0,0,0,0.02)]'
+                : 'bg-white text-[#757575] hover:bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)]'
             }`}
           >
             {day}
@@ -70,7 +70,7 @@ export default function MessPage() {
       {/* Menu Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {dayMenu.length === 0 ? (
-          <Card className="col-span-2 p-8 text-center text-xs text-slate-500">
+          <Card className="col-span-2 p-8 text-center text-xs text-[#757575]">
             Standard buffet menu active for {selectedDay}.
           </Card>
         ) : (
@@ -82,23 +82,23 @@ export default function MessPage() {
                   <CardTitle className="text-lg mt-1 capitalize">{m.dayOfWeek} {m.mealType}</CardTitle>
                 </div>
                 {m.calories && (
-                  <span className="text-xs font-semibold text-amber-600 dark:text-amber-400 flex items-center gap-1">
-                    <Flame className="w-3.5 h-3.5" /> {m.calories} kcal
+                  <span className="text-xs font-semibold text-[#757575] flex items-center gap-1">
+                    <Flame className="w-3.5 h-3.5 text-[#757575]" strokeWidth={1.5} /> {m.calories} kcal
                   </span>
                 )}
               </CardHeader>
               <CardContent className="space-y-3">
-                <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                <ul className="space-y-1.5 text-xs text-[#757575]">
                   {m.items.map((item, idx) => (
                     <li key={idx} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0A0A0A]" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
 
                 {m.specialItem && (
-                  <div className="p-3 rounded-xl bg-orange-50 dark:bg-orange-950/40 border border-orange-200/60 text-xs font-bold text-orange-800 dark:text-orange-300">
+                  <div className="p-4 rounded-2xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)] text-xs font-bold text-[#0A0A0A]">
                     🌟 Chef Special: {m.specialItem}
                   </div>
                 )}

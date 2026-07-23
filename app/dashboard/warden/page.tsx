@@ -25,27 +25,27 @@ export default function WardenDashboardPage() {
   const openComplaints = complaints.filter((c) => c.status === 'open' || c.status === 'assigned');
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-sans">
       
       {/* Warden Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-3xl bg-gradient-to-r from-indigo-700 via-purple-700 to-blue-700 text-white shadow-lg shadow-indigo-500/20">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-2xl bg-white border border-[rgba(0,0,0,0.06)] shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
         <div>
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-bold uppercase">
+            <span className="px-2.5 py-0.5 rounded-full bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)] text-[#0A0A0A] text-xs font-bold uppercase">
               Warden Desk
             </span>
-            <span className="text-xs text-indigo-200">Arthur Mitchell • Chief Warden</span>
+            <span className="text-xs text-[#757575]">Arthur Mitchell • Chief Warden</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-[-0.05em] text-[#0A0A0A] mt-1">
             Student Discipline & Pass Control
           </h1>
-          <p className="text-sm text-indigo-100 mt-1">
+          <p className="text-sm text-[#757575] mt-1">
             Review gate pass approvals, guardian calls, maintenance staff dispatch, and night attendance.
           </p>
         </div>
 
         <div className="flex items-center gap-2">
-          <Badge variant="warning" className="bg-amber-400/20 text-amber-200 border-amber-400/30 text-xs px-3 py-1">
+          <Badge variant="warning" className="bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] text-[#0A0A0A] text-xs px-3 py-1">
             {pendingPasses.length} Pending Passes
           </Badge>
         </div>
@@ -55,43 +55,43 @@ export default function WardenDashboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* Gate Pass Approvals Queue */}
-        <Card>
+        <Card className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl shadow-sm">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <QrCode className="w-5 h-5 text-indigo-500" />
+            <CardTitle className="flex items-center gap-2 text-[#0A0A0A] tracking-tight font-bold">
+              <QrCode className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
               Gate Pass Approval Requests ({pendingPasses.length})
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-0 divide-y divide-slate-100 dark:divide-slate-800">
+          <CardContent className="p-0 divide-y divide-[rgba(0,0,0,0.04)]">
             {pendingPasses.length === 0 ? (
-              <div className="p-8 text-center text-xs text-slate-500">
-                <CheckCircle2 className="w-8 h-8 text-emerald-500 mx-auto mb-2" />
+              <div className="p-8 text-center text-xs text-[#757575]">
+                <CheckCircle2 className="w-8 h-8 text-[#0A0A0A] mx-auto mb-2" strokeWidth={1.5} />
                 No pending gate passes right now!
               </div>
             ) : (
               pendingPasses.map((pass) => (
-                <div key={pass.id} className="p-5 space-y-3">
+                <div key={pass.id} className="p-5 space-y-3 hover:bg-[#FAFAFA] transition-colors">
                   <div className="flex items-start justify-between">
                     <div>
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">{pass.studentName}</h4>
-                      <p className="text-xs text-slate-500">Room {pass.roomNumber} • Reason: {pass.reason}</p>
-                      <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-0.5">
+                      <h4 className="text-sm font-bold text-[#0A0A0A]">{pass.studentName}</h4>
+                      <p className="text-xs text-[#757575]">Room {pass.roomNumber} • Reason: {pass.reason}</p>
+                      <p className="text-xs text-[#0A0A0A] mt-0.5">
                         Destination: {pass.destination}
                       </p>
                     </div>
-                    <Badge variant="warning">Pending Approval</Badge>
+                    <Badge variant="warning" className="bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] text-[#0A0A0A]">Pending Approval</Badge>
                   </div>
 
                   {/* Guardian Contact Quick Action */}
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 text-xs">
-                    <span className="text-slate-600 dark:text-slate-300 font-medium">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.04)] text-xs">
+                    <span className="text-[#0A0A0A] font-medium">
                       Guardian: {pass.guardianContact}
                     </span>
                     <a
                       href={`tel:${pass.guardianContact}`}
-                      className="flex items-center gap-1 text-emerald-600 font-bold hover:underline"
+                      className="flex items-center gap-1 text-[#0A0A0A] font-bold hover:underline"
                     >
-                      <PhoneCall className="w-3.5 h-3.5" /> Call Parent
+                      <PhoneCall className="w-3.5 h-3.5" strokeWidth={1.5} /> Call Parent
                     </a>
                   </div>
 
@@ -99,16 +99,18 @@ export default function WardenDashboardPage() {
                     <Button
                       size="sm"
                       variant="danger"
+                      className="bg-white border border-[rgba(0,0,0,0.06)] text-[#0A0A0A] hover:bg-[#FAFAFA]"
                       onClick={() => updateGatePassStatus(pass.id, 'rejected', 'Guardian unverified')}
                     >
-                      <X className="w-4 h-4 mr-1" /> Reject
+                      <X className="w-4 h-4 mr-1" strokeWidth={1.5} /> Reject
                     </Button>
                     <Button
                       size="sm"
                       variant="success"
+                      className="bg-[#0A0A0A] text-white hover:bg-[#222222]"
                       onClick={() => updateGatePassStatus(pass.id, 'approved')}
                     >
-                      <Check className="w-4 h-4 mr-1" /> Approve & Issue QR
+                      <Check className="w-4 h-4 mr-1" strokeWidth={1.5} /> Approve & Issue QR
                     </Button>
                   </div>
                 </div>
@@ -118,29 +120,29 @@ export default function WardenDashboardPage() {
         </Card>
 
         {/* Complaint Triage & Staff Assignment */}
-        <Card>
+        <Card className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl shadow-sm">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <AlertCircle className="w-5 h-5 text-amber-500" />
+            <CardTitle className="flex items-center gap-2 text-[#0A0A0A] tracking-tight font-bold">
+              <AlertCircle className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
               Complaint Triage & Staff Dispatch
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-0 divide-y divide-slate-100 dark:divide-slate-800">
+          <CardContent className="p-0 divide-y divide-[rgba(0,0,0,0.04)]">
             {openComplaints.map((cmp) => (
-              <div key={cmp.id} className="p-4 space-y-3">
+              <div key={cmp.id} className="p-4 space-y-3 hover:bg-[#FAFAFA] transition-colors">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">{cmp.title}</h4>
-                    <p className="text-[11px] text-slate-500">By {cmp.studentName} ({cmp.roomNumber})</p>
+                    <h4 className="text-xs font-bold text-[#0A0A0A]">{cmp.title}</h4>
+                    <p className="text-[11px] text-[#757575]">By {cmp.studentName} ({cmp.roomNumber})</p>
                   </div>
-                  <Badge variant={cmp.priority === 'high' ? 'danger' : 'warning'}>{cmp.priority} priority</Badge>
+                  <Badge variant={cmp.priority === 'high' ? 'danger' : 'warning'} className="bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] text-[#0A0A0A]">{cmp.priority} priority</Badge>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <select
                     value={cmp.assignedStaffName || selectedStaff}
                     onChange={(e) => setSelectedStaff(e.target.value)}
-                    className="flex-1 px-3 py-1.5 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none dark:text-white"
+                    className="flex-1 px-3 py-1.5 text-xs bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] rounded-lg focus:ring-1 focus:ring-[#0A0A0A] focus:outline-none text-[#0A0A0A]"
                   >
                     <option value="Robert Vance (HVAC Specialist)">Robert Vance (HVAC)</option>
                     <option value="Carlos Plumbing Team">Carlos Plumbing Team</option>
@@ -150,6 +152,7 @@ export default function WardenDashboardPage() {
                   <Button
                     size="sm"
                     variant="primary"
+                    className="bg-[#0A0A0A] text-white hover:bg-[#222222]"
                     onClick={() => updateComplaintStatus(cmp.id, 'assigned', 'stf_1', selectedStaff)}
                   >
                     Assign Staff
@@ -163,37 +166,37 @@ export default function WardenDashboardPage() {
       </div>
 
       {/* Grid Row 2: Night Attendance Tracker */}
-      <Card>
+      <Card className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl shadow-sm">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Moon className="w-5 h-5 text-indigo-500" />
+          <CardTitle className="flex items-center gap-2 text-[#0A0A0A] tracking-tight font-bold">
+            <Moon className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
             Night Attendance Check Sheet (Tonight)
           </CardTitle>
         </CardHeader>
-        <CardContent className="p-0 divide-y divide-slate-100 dark:divide-slate-800">
+        <CardContent className="p-0 divide-y divide-[rgba(0,0,0,0.04)]">
           {students.map((std) => (
-            <div key={std.id} className="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/40">
+            <div key={std.id} className="p-4 flex items-center justify-between hover:bg-[#FAFAFA] transition-colors">
               <div>
-                <p className="text-sm font-bold text-slate-900 dark:text-white">{std.fullName}</p>
-                <p className="text-xs text-slate-500">Room {std.roomNumber} • {std.course}</p>
+                <p className="text-sm font-bold text-[#0A0A0A]">{std.fullName}</p>
+                <p className="text-xs text-[#757575]">Room {std.roomNumber} • {std.course}</p>
               </div>
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setNightAttendance({ ...nightAttendance, [std.id]: true })}
-                  className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
+                  className={`px-3 py-1 text-xs font-bold rounded-lg transition-all border ${
                     nightAttendance[std.id]
-                      ? 'bg-emerald-600 text-white shadow-sm'
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                      ? 'bg-[#0A0A0A] text-white border-[#0A0A0A] shadow-sm'
+                      : 'bg-[#FAFAFA] text-[#757575] border-[rgba(0,0,0,0.04)] hover:text-[#0A0A0A]'
                   }`}
                 >
                   Present
                 </button>
                 <button
                   onClick={() => setNightAttendance({ ...nightAttendance, [std.id]: false })}
-                  className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
+                  className={`px-3 py-1 text-xs font-bold rounded-lg transition-all border ${
                     !nightAttendance[std.id]
-                      ? 'bg-rose-600 text-white shadow-sm'
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                      ? 'bg-white text-[#0A0A0A] border-[rgba(0,0,0,0.06)] shadow-sm'
+                      : 'bg-[#FAFAFA] text-[#757575] border-[rgba(0,0,0,0.04)] hover:text-[#0A0A0A]'
                   }`}
                 >
                   Absent / Out-Pass

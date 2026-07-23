@@ -47,62 +47,62 @@ export default function ReportsPage() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5">
-            <FileText className="w-7 h-7 text-indigo-600" />
+          <h1 className="text-2xl font-extrabold text-[#0A0A0A] tracking-[-0.05em] flex items-center gap-2.5 font-sans">
+            <FileText className="w-7 h-7 text-[#0A0A0A]" strokeWidth={1.5} />
             Executive PDF & Analytics Reports
           </h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-[#757575] mt-1 font-sans">
             Generate printable PDF summary reports for hostel occupancy, complaint resolution, and financials.
           </p>
         </div>
 
         <Button variant="primary" size="sm" onClick={generateFullExecutivePDF}>
-          <Download className="w-4 h-4 mr-1.5" /> Download Full PDF Report
+          <Download className="w-4 h-4 mr-1.5 text-[#0A0A0A]" strokeWidth={1.5} /> Download Full PDF Report
         </Button>
       </div>
 
       {/* Report Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <Card hoverEffect>
+        <Card className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <DoorOpen className="w-5 h-5 text-blue-500" />
+            <CardTitle className="flex items-center gap-2 text-base font-sans text-[#0A0A0A] tracking-[-0.05em]">
+              <DoorOpen className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
               Occupancy Matrix Report
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-xs">
-            <p className="text-slate-500">Breakdown of vacant beds, floor-by-floor occupancy rates, and room transfers.</p>
+          <CardContent className="space-y-3 text-xs font-sans">
+            <p className="text-[#757575]">Breakdown of vacant beds, floor-by-floor occupancy rates, and room transfers.</p>
             <Button size="sm" variant="outline" className="w-full" onClick={generateFullExecutivePDF}>
               Export Occupancy PDF
             </Button>
           </CardContent>
         </Card>
 
-        <Card hoverEffect>
+        <Card className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <AlertCircle className="w-5 h-5 text-amber-500" />
+            <CardTitle className="flex items-center gap-2 text-base font-sans text-[#0A0A0A] tracking-[-0.05em]">
+              <AlertCircle className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
               AI Complaints Analytics
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-xs">
-            <p className="text-slate-500">Average resolution duration per category (HVAC, Plumbing, Wi-Fi, Electrical).</p>
+          <CardContent className="space-y-3 text-xs font-sans">
+            <p className="text-[#757575]">Average resolution duration per category (HVAC, Plumbing, Wi-Fi, Electrical).</p>
             <Button size="sm" variant="outline" className="w-full" onClick={generateFullExecutivePDF}>
               Export Complaints PDF
             </Button>
           </CardContent>
         </Card>
 
-        <Card hoverEffect>
+        <Card className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <CreditCard className="w-5 h-5 text-emerald-500" />
+            <CardTitle className="flex items-center gap-2 text-base font-sans text-[#0A0A0A] tracking-[-0.05em]">
+              <CreditCard className="w-5 h-5 text-[#0A0A0A]" strokeWidth={1.5} />
               Financial & Fee Invoicing
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-xs">
-            <p className="text-slate-500">Monthly hostel rent collections, pending mess fee dues, and utility bill reports.</p>
+          <CardContent className="space-y-3 text-xs font-sans">
+            <p className="text-[#757575]">Monthly hostel rent collections, pending mess fee dues, and utility bill reports.</p>
             <Button size="sm" variant="outline" className="w-full" onClick={generateFullExecutivePDF}>
               Export Revenue PDF
             </Button>
