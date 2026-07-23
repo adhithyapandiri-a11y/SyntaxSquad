@@ -45,3 +45,20 @@ h1 {
   transform: translateY(-1px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
+
+@theme {
+  --animate-aurora: aurora 60s linear infinite;
+
+  @keyframes aurora {
+    from {
+      background-position:
+        50% 50%,
+        50% 50%;
+    }
+    to {
+      background-position:
+        350% 50%,
+        350% 50%;
+    }
+  }
+}

@@ -75,7 +75,7 @@ function FloatingPaths({ position }: { position: number }) {
 export function BackgroundPaths() {
   return (
     <div 
-      className="absolute inset-0 overflow-hidden pointer-events-none z-0"
+      className="absolute inset-0 overflow-hidden pointer-events-none z-1"
       style={{
         maskImage: "radial-gradient(circle at center, black, transparent 80%)",
         WebkitMaskImage: "radial-gradient(circle at center, black, transparent 80%)",

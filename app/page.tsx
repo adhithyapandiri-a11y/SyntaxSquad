@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { BackgroundPaths } from '@/components/ui/background-paths';
+import { AuroraBackground } from '@/components/ui/aurora-background';
 
 // Configuration for staggered fade-up animations
 const fadeUpVariants = {
@@ -135,6 +136,7 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="relative pt-[160px] pb-[160px] md:pb-[160px] min-h-screen flex flex-col items-center justify-center text-center px-6 md:px-10 overflow-hidden">
+        <AuroraBackground />
         <BackgroundPaths />
         <motion.div 
           variants={staggerContainer}
