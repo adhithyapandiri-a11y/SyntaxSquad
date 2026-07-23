@@ -34,22 +34,14 @@ export default function VisitorsPage() {
   };
   return (
     <div className="space-y-6">
-      
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        
         <div>
-          
           <h1 className="text-2xl font-extrabold text-[#0A0A0A] tracking-[-0.05em] flex items-center gap-2.5">
-            
-            <UserCheck
-              className="w-7 h-7 text-[#0A0A0A]"
-              strokeWidth={1.5}
-            />
+            <UserCheck className="w-7 h-7 text-[#0A0A0A]" strokeWidth={1.5} />
             Visitor Entry Register & Check-In
           </h1>
           <p className="text-sm text-[#757575] mt-1">
-            
             Digitized visitor entry logs with timestamp check-ins and security
             check-outs.
           </p>
@@ -59,22 +51,16 @@ export default function VisitorsPage() {
           size="sm"
           onClick={() => setIsModalOpen(true)}
         >
-          
           <Plus className="w-4 h-4 mr-1.5" strokeWidth={1.5} /> Check-In New
           Visitor
         </Button>
       </div>
       {/* Visitors Data Table */}
       <Card className="bg-white border border-[rgba(0,0,0,0.06)] rounded-2xl p-6">
-        
         <CardContent className="p-0 overflow-x-auto">
-          
           <table className="w-full text-left text-xs">
-            
             <thead className="bg-[#FAFAFA] text-[#757575] font-bold uppercase border-b border-[rgba(0,0,0,0.06)] ">
-              
               <tr>
-                
                 <th className="p-4">Visitor</th>
                 <th className="p-4">Student & Room</th>
                 <th className="p-4">Relation & Purpose</th>
@@ -84,12 +70,9 @@ export default function VisitorsPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-[rgba(0,0,0,0.06)] ">
-              
               {visitors.map((vis) => (
                 <tr key={vis.id} className="hover:bg-[#FAFAFA] ">
-                  
                   <td className="p-4">
-                    
                     <p className="font-bold text-[#0A0A0A] ">
                       {vis.visitorName}
                     </p>
@@ -98,7 +81,6 @@ export default function VisitorsPage() {
                     </p>
                   </td>
                   <td className="p-4">
-                    
                     <p className="font-bold text-[#0A0A0A] ">
                       {vis.studentName}
                     </p>
@@ -107,19 +89,15 @@ export default function VisitorsPage() {
                     </p>
                   </td>
                   <td className="p-4">
-                    
                     <p className="font-semibold text-[#0A0A0A] ">
                       {vis.relation}
                     </p>
-                    <p className="text-[10px] text-[#757575]">
-                      {vis.purpose}
-                    </p>
+                    <p className="text-[10px] text-[#757575]">{vis.purpose}</p>
                   </td>
                   <td className="p-4 text-[#757575]">
                     {formatDateTime(vis.timeIn)}
                   </td>
                   <td className="p-4">
-                    
                     <Badge
                       variant={vis.status === "active" ? "success" : "outline"}
                     >
@@ -127,14 +105,12 @@ export default function VisitorsPage() {
                     </Badge>
                   </td>
                   <td className="p-4 text-right">
-                    
                     {vis.status === "active" ? (
                       <Button
                         size="sm"
                         variant="outline"
                         onClick={() => checkOutVisitor(vis.id)}
                       >
-                        
                         Check Out
                       </Button>
                     ) : (
@@ -157,13 +133,9 @@ export default function VisitorsPage() {
           title="New Visitor Entry Check-In"
           subtitle="Log visitor details at main security gate"
         >
-          
           <form onSubmit={handleSubmit} className="space-y-4">
-            
             <div>
-              
               <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
-                
                 Visiting Student *
               </label>
               <select
@@ -171,21 +143,16 @@ export default function VisitorsPage() {
                 onChange={(e) => setStudentId(e.target.value)}
                 className="w-full px-3 py-2 text-sm bg-[#FAFAFA] border rounded-xl focus:outline-none "
               >
-                
                 {students.map((s) => (
                   <option key={s.id} value={s.id}>
-                    
                     {s.fullName} (Room {s.roomNumber})
                   </option>
                 ))}
               </select>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              
               <div>
-                
                 <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
-                  
                   Visitor Full Name *
                 </label>
                 <input
@@ -198,9 +165,7 @@ export default function VisitorsPage() {
                 />
               </div>
               <div>
-                
                 <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
-                  
                   Visitor Phone *
                 </label>
                 <input
@@ -214,11 +179,8 @@ export default function VisitorsPage() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              
               <div>
-                
                 <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
-                  
                   Relation
                 </label>
                 <input
@@ -230,9 +192,7 @@ export default function VisitorsPage() {
                 />
               </div>
               <div>
-                
                 <label className="block text-xs font-bold uppercase tracking-wider text-[#757575] mb-1">
-                  
                   Purpose of Visit
                 </label>
                 <input
@@ -245,7 +205,6 @@ export default function VisitorsPage() {
               </div>
             </div>
             <div className="flex justify-end gap-2 pt-3 border-t border-[rgba(0,0,0,0.06)] ">
-              
               <Button
                 type="button"
                 variant="ghost"
