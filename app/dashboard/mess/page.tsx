@@ -3,15 +3,12 @@
 import React, { useState } from 'react';
 import { Utensils, Star, Calendar, ThumbsUp } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { useStore } from '@/lib/store/useStore';
 
 export default function MessPage() {
   const { messMenu } = useStore();
   const [selectedDay, setSelectedDay] = useState<'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday'>('Monday');
-  const [mealAttendanceCount, setMealAttendanceCount] = useState(342);
-  const [userAttending, setUserAttending] = useState(true);
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] as const;
 
@@ -28,25 +25,8 @@ export default function MessPage() {
             Mess Operations & Weekly Food Menu
           </h1>
           <p className="text-sm text-slate-500 mt-1">
-            View 7-day meal schedules, student feedback ratings, and log meal attendance.
+            View 7-day meal schedules and student feedback ratings.
           </p>
-        </div>
-
-        <div className="p-3 rounded-2xl bg-orange-50 dark:bg-orange-950/40 border border-orange-200 flex items-center gap-3 text-xs">
-          <div>
-            <span className="font-bold text-slate-900 dark:text-white">Meal Attendance RSVP</span>
-            <p className="text-slate-500">{mealAttendanceCount} Students confirmed for dinner tonight</p>
-          </div>
-          <Button
-            size="sm"
-            variant={userAttending ? 'success' : 'outline'}
-            onClick={() => {
-              setUserAttending(!userAttending);
-              setMealAttendanceCount(userAttending ? mealAttendanceCount - 1 : mealAttendanceCount + 1);
-            }}
-          >
-            {userAttending ? '✓ Attending' : 'RSVP Meal'}
-          </Button>
         </div>
       </div>
 

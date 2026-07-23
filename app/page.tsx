@@ -50,7 +50,7 @@ export default function LandingPage() {
       icon: Utensils,
       color: 'from-orange-500 to-amber-600',
       title: 'Weekly Mess Planner',
-      description: 'Dynamic 7-day meal menu schedules, student rating feedback, and daily meal attendance counters.'
+      description: 'Dynamic 7-day meal menu schedules and student rating feedback.'
     },
     {
       icon: ShieldCheck,
