@@ -16,7 +16,7 @@ const AuroraBackground = ({
   return (
     <main>
       <div
-        className={`relative flex flex-col h-screen items-center justify-center bg-zinc-900 text-slate-950 transition-bg dark:bg-zinc-900 ${className}`}
+        className={`relative flex flex-col min-h-[100vh] items-center justify-center bg-zinc-900 text-slate-950 transition-bg dark:bg-zinc-900 ${className}`}
         {...props}
       >
         <div className="absolute inset-0 overflow-hidden">
