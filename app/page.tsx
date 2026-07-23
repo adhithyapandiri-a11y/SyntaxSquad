@@ -112,7 +112,6 @@ export default function LandingPage() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 text-[14px] font-medium text-[#757575]">
-            <a href="#features" className="hover:text-[#0A0A0A] transition-colors">Product</a>
             <a href="#features" className="hover:text-[#0A0A0A] transition-colors">Features</a>
             <a href="#pricing" className="hover:text-[#0A0A0A] transition-colors">Pricing</a>
             <a href="#footer" className="hover:text-[#0A0A0A] transition-colors">Contact</a>
