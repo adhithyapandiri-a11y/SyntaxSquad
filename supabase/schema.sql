@@ -166,18 +166,7 @@ CREATE TABLE IF NOT EXISTS public.notifications (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 13. CHAT MESSAGES
-CREATE TABLE IF NOT EXISTS public.chat_messages (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  sender_id UUID REFERENCES public.users(id) ON DELETE CASCADE,
-  recipient_id UUID REFERENCES public.users(id) ON DELETE CASCADE,
-  content TEXT NOT NULL,
-  attachment_url TEXT,
-  is_read BOOLEAN DEFAULT FALSE,
-  timestamp TIMESTAMPTZ DEFAULT NOW()
-);
-
--- 14. ACTIVITY LOGS
+-- 13. ACTIVITY LOGS
 CREATE TABLE IF NOT EXISTS public.activity_logs (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   user_id UUID REFERENCES public.users(id) ON DELETE SET NULL,

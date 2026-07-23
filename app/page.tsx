@@ -386,7 +386,6 @@ export default function LandingPage() {
                 <li className="flex items-center gap-2"><Check className="w-4 h-4 text-teal-400" /> All Starter Features Included</li>
                 <li className="flex items-center gap-2"><Check className="w-4 h-4 text-teal-400" /> Automated Invoicing & PDF Receipts</li>
                 <li className="flex items-center gap-2"><Check className="w-4 h-4 text-teal-400" /> Security Guard Gate Pass Scanner</li>
-                <li className="flex items-center gap-2"><Check className="w-4 h-4 text-teal-400" /> Student-Warden Live Chat</li>
               </ul>
             </div>
             <Link href="/dashboard/admin" className="mt-8">

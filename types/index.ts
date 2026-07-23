@@ -204,15 +204,3 @@ export interface ActivityLog {
   details: string;
   timestamp: string;
 }
-
-export interface ChatMessage {
-  id: string;
-  senderId: string;
-  senderName: string;
-  senderRole: UserRole;
-  recipientId: string;
-  content: string;
-  attachmentUrl?: string;
-  isRead: boolean;
-  timestamp: string;
-}

@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { 
   User, UserRole, Student, Room, Complaint, GatePass, Payment, 
-  Visitor, MessMenuItem, Announcement, NotificationItem, ActivityLog, ChatMessage,
+  Visitor, MessMenuItem, Announcement, NotificationItem, ActivityLog,
   ComplaintCategory, ComplaintPriority, GatePassStatus
 } from '@/types';
 import { generateId } from '@/lib/utils';
@@ -451,28 +451,6 @@ const mockNotifications: NotificationItem[] = [
   }
 ];
 
-const mockChatMessages: ChatMessage[] = [
-  {
-    id: 'msg_1',
-    senderId: 'usr_std_1',
-    senderName: 'Alex Rivera',
-    senderRole: 'student',
-    recipientId: 'usr_admin_1',
-    content: 'Good morning Warden Mitchell, could you check my gate pass status for Boston visit?',
-    isRead: true,
-    timestamp: '2026-07-23T09:00:00Z'
-  },
-  {
-    id: 'msg_2',
-    senderId: 'usr_admin_1',
-    senderName: 'Warden Mitchell',
-    senderRole: 'warden',
-    recipientId: 'usr_std_1',
-    content: 'Hi Alex, I verified with your guardian contact. Your gate pass GP-901 has been approved!',
-    isRead: true,
-    timestamp: '2026-07-23T10:01:00Z'
-  }
-];
 
 // --- ZUSTAND STORE INTERFACE ---
 interface StoreState {
@@ -493,7 +471,6 @@ interface StoreState {
   messMenu: MessMenuItem[];
   announcements: Announcement[];
   notifications: NotificationItem[];
-  chatMessages: ChatMessage[];
   activityLogs: ActivityLog[];
 
   // Mutators & Actions
@@ -531,8 +508,6 @@ interface StoreState {
   // Notice Actions
   addAnnouncement: (announcement: Omit<Announcement, 'id' | 'createdAt' | 'createdBy' | 'createdByName'>) => void;
 
-  // Chat Actions
-  sendChatMessage: (content: string, recipientId?: string) => void;
   markNotificationsRead: () => void;
 }
 
@@ -552,7 +527,6 @@ export const useStore = create<StoreState>((set, get) => ({
   messMenu: mockMessMenu,
   announcements: mockAnnouncements,
   notifications: mockNotifications,
-  chatMessages: mockChatMessages,
   activityLogs: [
     {
       id: 'log_1',
@@ -901,42 +875,6 @@ export const useStore = create<StoreState>((set, get) => ({
     }));
   },
 
-  // Chat
-  sendChatMessage: (content, recipientId = 'usr_admin_1') => {
-    const user = get().currentUser;
-    const msg: ChatMessage = {
-      id: generateId('msg'),
-      senderId: user.id,
-      senderName: user.fullName,
-      senderRole: user.role,
-      recipientId,
-      content,
-      isRead: false,
-      timestamp: new Date().toISOString()
-    };
-    set((state) => ({
-      chatMessages: [...state.chatMessages, msg]
-    }));
-
-    // Simulate warden AI/Auto response if student messages warden
-    if (user.role === 'student') {
-      setTimeout(() => {
-        const reply: ChatMessage = {
-          id: generateId('msg_reply'),
-          senderId: 'usr_warden_1',
-          senderName: 'Warden Arthur Mitchell',
-          senderRole: 'warden',
-          recipientId: user.id,
-          content: `Hello ${user.fullName.split(' ')[0]}, I have received your note regarding "${content.slice(0, 30)}...". I am reviewing it right now.`,
-          isRead: false,
-          timestamp: new Date().toISOString()
-        };
-        set((state) => ({
-          chatMessages: [...state.chatMessages, reply]
-        }));
-      }, 2000);
-    }
-  },
 
   markNotificationsRead: () => {
     set((state) => ({

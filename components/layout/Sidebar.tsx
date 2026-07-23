@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
   Building2, LayoutDashboard, DoorOpen, Users, AlertCircle, 
-  QrCode, CreditCard, Utensils, Megaphone, MessageSquare, 
+  QrCode, CreditCard, Utensils, Megaphone, 
   FileText, Settings, ShieldCheck, UserCheck, CheckSquare, Sparkles, LogOut
 } from 'lucide-react';
 import { useStore } from '@/lib/store/useStore';
@@ -25,7 +25,6 @@ export const Sidebar: React.FC = () => {
     { href: '/dashboard/payments', label: 'Financials', icon: CreditCard },
     { href: '/dashboard/mess', label: 'Mess Operations', icon: Utensils },
     { href: '/dashboard/notices', label: 'Notices Board', icon: Megaphone },
-    { href: '/dashboard/chat', label: 'Live Chat', icon: MessageSquare },
     { href: '/dashboard/reports', label: 'PDF Reports', icon: FileText },
     { href: '/dashboard/settings', label: 'System Settings', icon: Settings },
   ];
@@ -37,7 +36,6 @@ export const Sidebar: React.FC = () => {
     { href: '/dashboard/payments', label: 'Fee Payments', icon: CreditCard },
     { href: '/dashboard/mess', label: 'Mess Menu', icon: Utensils },
     { href: '/dashboard/notices', label: 'Hostel Notices', icon: Megaphone },
-    { href: '/dashboard/chat', label: 'Chat with Warden', icon: MessageSquare },
     { href: '/dashboard/settings', label: 'My Profile', icon: Settings },
   ];
 
@@ -48,7 +46,6 @@ export const Sidebar: React.FC = () => {
     { href: '/dashboard/students', label: 'Student Directory', icon: Users },
     { href: '/dashboard/visitors', label: 'Visitor Logs', icon: UserCheck },
     { href: '/dashboard/notices', label: 'Publish Notice', icon: Megaphone },
-    { href: '/dashboard/chat', label: 'Student Messages', icon: MessageSquare },
     { href: '/dashboard/settings', label: 'Settings', icon: Settings },
   ];
 
