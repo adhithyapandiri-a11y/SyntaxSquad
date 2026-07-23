@@ -1,11 +1,15 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Navbar } from '@/components/layout/Navbar';
-import { Sidebar } from '@/components/layout/Sidebar';
-import { CommandPalette } from '@/components/common/CommandPalette';
+import React from "react";
+import { Navbar } from "@/components/layout/Navbar";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { CommandPalette } from "@/components/common/CommandPalette";
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className="min-h-screen flex bg-white text-[#0A0A0A] font-sans">
       {/* Sidebar Navigation */}

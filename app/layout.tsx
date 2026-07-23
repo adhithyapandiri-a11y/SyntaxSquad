@@ -17,7 +17,8 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: "RoomZen - Premium Operating System for Student Housing",
-  description: "Manage complaints, gate passes, room allocation, payments and communication from one intelligent platform.",
+  description:
+    "Manage complaints, gate passes, room allocation, payments and communication from one intelligent platform.",
 };
 
 export default function RootLayout({
@@ -26,7 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`h-full antialiased ${inter.variable} ${sourceSerif.variable}`}>
+    <html
+      lang="en"
+      className={`h-full antialiased ${inter.variable} ${sourceSerif.variable}`}
+    >
       <body className="min-h-full flex flex-col font-sans bg-white text-[#0A0A0A] selection:bg-[#0A0A0A] selection:text-white">
         {children}
       </body>

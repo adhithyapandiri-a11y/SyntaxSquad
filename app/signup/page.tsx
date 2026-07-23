@@ -1,25 +1,25 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { Building2, ArrowRight, ShieldCheck } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { useStore } from '@/lib/store/useStore';
-import { UserRole } from '@/types';
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Building2, ArrowRight, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { useStore } from "@/lib/store/useStore";
+import { UserRole } from "@/types";
 
 export default function SignupPage() {
   const router = useRouter();
   const { setActiveRole } = useStore();
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [role, setRole] = useState<UserRole>('student');
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState<UserRole>("student");
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
     setActiveRole(role);
-    router.push('/dashboard/' + role);
+    router.push("/dashboard/" + role);
   };
 
   return (
@@ -33,7 +33,7 @@ export default function SignupPage() {
             RoomZen
           </span>
         </Link>
-        
+
         <h2 className="mt-6 text-2xl font-bold text-[#0A0A0A] tracking-[-0.05em]">
           Create your RoomZen Account
         </h2>
@@ -103,15 +103,22 @@ export default function SignupPage() {
               />
             </div>
 
-            <Button type="submit" variant="primary" className="w-full py-3 mt-2 bg-[#0A0A0A] text-white hover:bg-[#222222] border border-[rgba(0,0,0,0.06)] shadow-sm">
+            <Button
+              type="submit"
+              variant="primary"
+              className="w-full py-3 mt-2 bg-[#0A0A0A] text-white hover:bg-[#222222] border border-[rgba(0,0,0,0.06)] shadow-sm"
+            >
               Create Account & Launch
               <ArrowRight className="w-4 h-4 ml-1" strokeWidth={1.5} />
             </Button>
           </form>
 
           <div className="mt-6 text-center text-xs text-[#757575]">
-            Already have an account?{' '}
-            <Link href="/login" className="font-semibold text-[#0A0A0A] hover:underline">
+            Already have an account?{" "}
+            <Link
+              href="/login"
+              className="font-semibold text-[#0A0A0A] hover:underline"
+            >
               Sign in
             </Link>
           </div>

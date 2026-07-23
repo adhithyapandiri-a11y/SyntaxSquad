@@ -1,25 +1,40 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Utensils, Star, Calendar, Flame, ThumbsUp } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
-import { useStore } from '@/lib/store/useStore';
+import React, { useState } from "react";
+import { Utensils, Star, Calendar, Flame, ThumbsUp } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { useStore } from "@/lib/store/useStore";
 
 export default function MessPage() {
   const { messMenu } = useStore();
-  const [selectedDay, setSelectedDay] = useState<'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday'>('Monday');
+  const [selectedDay, setSelectedDay] = useState<
+    | "Monday"
+    | "Tuesday"
+    | "Wednesday"
+    | "Thursday"
+    | "Friday"
+    | "Saturday"
+    | "Sunday"
+  >("Monday");
   const [mealAttendanceCount, setMealAttendanceCount] = useState(342);
   const [userAttending, setUserAttending] = useState(true);
 
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] as const;
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ] as const;
 
   const dayMenu = messMenu.filter((m) => m.dayOfWeek === selectedDay);
 
   return (
     <div className="space-y-6">
-      
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -28,24 +43,33 @@ export default function MessPage() {
             Mess Operations & Weekly Food Menu
           </h1>
           <p className="text-sm text-[#757575] mt-1">
-            View 7-day meal schedules, calorie counts, student feedback ratings, and log meal attendance.
+            View 7-day meal schedules, calorie counts, student feedback ratings,
+            and log meal attendance.
           </p>
         </div>
 
         <div className="p-4 rounded-2xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] flex items-center gap-3 text-xs">
           <div>
-            <span className="font-bold text-[#0A0A0A]">Meal Attendance RSVP</span>
-            <p className="text-[#757575]">{mealAttendanceCount} Students confirmed for dinner tonight</p>
+            <span className="font-bold text-[#0A0A0A]">
+              Meal Attendance RSVP
+            </span>
+            <p className="text-[#757575]">
+              {mealAttendanceCount} Students confirmed for dinner tonight
+            </p>
           </div>
           <Button
             size="sm"
-            variant={userAttending ? 'success' : 'outline'}
+            variant={userAttending ? "success" : "outline"}
             onClick={() => {
               setUserAttending(!userAttending);
-              setMealAttendanceCount(userAttending ? mealAttendanceCount - 1 : mealAttendanceCount + 1);
+              setMealAttendanceCount(
+                userAttending
+                  ? mealAttendanceCount - 1
+                  : mealAttendanceCount + 1,
+              );
             }}
           >
-            {userAttending ? '✓ Attending' : 'RSVP Meal'}
+            {userAttending ? "✓ Attending" : "RSVP Meal"}
           </Button>
         </div>
       </div>
@@ -58,8 +82,8 @@ export default function MessPage() {
             onClick={() => setSelectedDay(day)}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
               selectedDay === day
-                ? 'bg-[#0A0A0A] text-white shadow-[0_2px_8px_rgba(0,0,0,0.02)]'
-                : 'bg-white text-[#757575] hover:bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)]'
+                ? "bg-[#0A0A0A] text-white shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
+                : "bg-white text-[#757575] hover:bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)]"
             }`}
           >
             {day}
@@ -78,12 +102,20 @@ export default function MessPage() {
             <Card key={m.id} hoverEffect>
               <CardHeader>
                 <div>
-                  <Badge variant="warning" className="capitalize">{m.mealType}</Badge>
-                  <CardTitle className="text-lg mt-1 capitalize">{m.dayOfWeek} {m.mealType}</CardTitle>
+                  <Badge variant="warning" className="capitalize">
+                    {m.mealType}
+                  </Badge>
+                  <CardTitle className="text-lg mt-1 capitalize">
+                    {m.dayOfWeek} {m.mealType}
+                  </CardTitle>
                 </div>
                 {m.calories && (
                   <span className="text-xs font-semibold text-[#757575] flex items-center gap-1">
-                    <Flame className="w-3.5 h-3.5 text-[#757575]" strokeWidth={1.5} /> {m.calories} kcal
+                    <Flame
+                      className="w-3.5 h-3.5 text-[#757575]"
+                      strokeWidth={1.5}
+                    />{" "}
+                    {m.calories} kcal
                   </span>
                 )}
               </CardHeader>
@@ -107,7 +139,6 @@ export default function MessPage() {
           ))
         )}
       </div>
-
     </div>
   );
 }
