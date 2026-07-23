@@ -79,7 +79,7 @@ export default function StudentsPage() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', 'uninest_students_export.csv');
+    link.setAttribute('download', 'roomzen_students_export.csv');
     document.body.appendChild(link);
     link.click();
   };

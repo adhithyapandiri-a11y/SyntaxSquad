@@ -9,7 +9,7 @@ import { generateId } from '@/lib/utils';
 // --- MOCK SEED DATA ---
 const initialUser: User = {
   id: 'usr_admin_1',
-  email: 'admin@uninest.com',
+  email: 'admin@roomzen.com',
   fullName: 'Dr. Sarah Jenkins',
   role: 'admin',
   avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150',
@@ -571,7 +571,7 @@ export const useStore = create<StoreState>((set, get) => ({
 
   setActiveRole: (role: UserRole) => {
     let name = 'Dr. Sarah Jenkins (Admin)';
-    let email = 'admin@uninest.com';
+    let email = 'admin@roomzen.com';
     let avatar = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150';
 
     if (role === 'student') {
@@ -580,15 +580,15 @@ export const useStore = create<StoreState>((set, get) => ({
       avatar = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150';
     } else if (role === 'warden') {
       name = 'Arthur Mitchell (Chief Warden)';
-      email = 'warden.mitchell@uninest.com';
+      email = 'warden.mitchell@roomzen.com';
       avatar = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150';
     } else if (role === 'staff') {
       name = 'Robert Vance (Maintenance Lead)';
-      email = 'robert.vance@uninest.com';
+      email = 'robert.vance@roomzen.com';
       avatar = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150';
     } else if (role === 'security') {
       name = 'Officer Marcus Vance (Gate Security)';
-      email = 'security.marcus@uninest.com';
+      email = 'security.marcus@roomzen.com';
       avatar = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150';
     }
 
