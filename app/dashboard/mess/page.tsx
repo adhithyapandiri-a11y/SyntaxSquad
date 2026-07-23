@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Utensils, Star, Calendar, Flame, ThumbsUp } from 'lucide-react';
+import { Utensils, Star, Calendar, ThumbsUp } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
@@ -28,7 +28,7 @@ export default function MessPage() {
             Mess Operations & Weekly Food Menu
           </h1>
           <p className="text-sm text-slate-500 mt-1">
-            View 7-day meal schedules, calorie counts, student feedback ratings, and log meal attendance.
+            View 7-day meal schedules, student feedback ratings, and log meal attendance.
           </p>
         </div>
 
@@ -81,11 +81,6 @@ export default function MessPage() {
                   <Badge variant="warning" className="capitalize">{m.mealType}</Badge>
                   <CardTitle className="text-lg mt-1 capitalize">{m.dayOfWeek} {m.mealType}</CardTitle>
                 </div>
-                {m.calories && (
-                  <span className="text-xs font-semibold text-amber-600 dark:text-amber-400 flex items-center gap-1">
-                    <Flame className="w-3.5 h-3.5" /> {m.calories} kcal
-                  </span>
-                )}
               </CardHeader>
               <CardContent className="space-y-3">
                 <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">

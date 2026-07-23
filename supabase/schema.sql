@@ -140,8 +140,7 @@ CREATE TABLE IF NOT EXISTS public.mess_menu (
   day_of_week TEXT NOT NULL CHECK (day_of_week IN ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')),
   meal_type TEXT NOT NULL CHECK (meal_type IN ('breakfast', 'lunch', 'snacks', 'dinner')),
   items TEXT[] NOT NULL,
-  special_item TEXT,
-  calories INTEGER
+  special_item TEXT
 );
 
 -- 11. ANNOUNCEMENTS / NOTICES

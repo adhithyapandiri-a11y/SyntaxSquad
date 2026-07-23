@@ -383,31 +383,27 @@ const mockMessMenu: MessMenuItem[] = [
     dayOfWeek: 'Monday',
     mealType: 'breakfast',
     items: ['Fluffy Pancakes', 'Maple Syrup', 'Fresh Fruit Bowl', 'Espresso / Tea'],
-    specialItem: 'Fresh Berry Smoothie',
-    calories: 520
+    specialItem: 'Fresh Berry Smoothie'
   },
   {
     id: 'menu_mon_lunch',
     dayOfWeek: 'Monday',
     mealType: 'lunch',
     items: ['Paneer Butter Masala', 'Jeera Rice', 'Butter Naan', 'Cucumber Salad', 'Gulab Jamun'],
-    specialItem: 'Mango Lassi',
-    calories: 780
+    specialItem: 'Mango Lassi'
   },
   {
     id: 'menu_tue_breakfast',
     dayOfWeek: 'Tuesday',
     mealType: 'breakfast',
-    items: ['South Indian Masala Dosa', 'Coconut Chutney', 'Sambar', 'Filter Coffee'],
-    calories: 460
+    items: ['South Indian Masala Dosa', 'Coconut Chutney', 'Sambar', 'Filter Coffee']
   },
   {
     id: 'menu_wed_dinner',
     dayOfWeek: 'Wednesday',
     mealType: 'dinner',
     items: ['Grilled Chicken / Tofu Steak', 'Mashed Potatoes', 'Steamed Broccoli', 'Garlic Bread'],
-    specialItem: 'Chocolate Mousse',
-    calories: 650
+    specialItem: 'Chocolate Mousse'
   }
 ];
 

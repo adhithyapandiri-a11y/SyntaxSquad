@@ -159,7 +159,6 @@ export interface MessMenuItem {
   mealType: MealType;
   items: string[];
   specialItem?: string;
-  calories?: number;
 }
 
 export interface MessFeedback {
