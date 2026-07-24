@@ -18,8 +18,6 @@ export default function MessPage() {
     | "Saturday"
     | "Sunday"
   >("Monday");
-  const [mealAttendanceCount, setMealAttendanceCount] = useState(342);
-  const [userAttending, setUserAttending] = useState(true);
 
   const days = [
     "Monday",
@@ -43,34 +41,8 @@ export default function MessPage() {
             Mess Operations & Weekly Food Menu
           </h1>
           <p className="text-sm text-[#757575] mt-1">
-            View 7-day meal schedules, calorie counts, student feedback ratings,
-            and log meal attendance.
+            View 7-day meal schedules and student feedback ratings.
           </p>
-        </div>
-
-        <div className="p-4 rounded-2xl bg-[#FAFAFA] border border-[rgba(0,0,0,0.06)] flex items-center gap-3 text-xs">
-          <div>
-            <span className="font-bold text-[#0A0A0A]">
-              Meal Attendance RSVP
-            </span>
-            <p className="text-[#757575]">
-              {mealAttendanceCount} Students confirmed for dinner tonight
-            </p>
-          </div>
-          <Button
-            size="sm"
-            variant={userAttending ? "success" : "outline"}
-            onClick={() => {
-              setUserAttending(!userAttending);
-              setMealAttendanceCount(
-                userAttending
-                  ? mealAttendanceCount - 1
-                  : mealAttendanceCount + 1,
-              );
-            }}
-          >
-            {userAttending ? "✓ Attending" : "RSVP Meal"}
-          </Button>
         </div>
       </div>
 
@@ -109,15 +81,6 @@ export default function MessPage() {
                     {m.dayOfWeek} {m.mealType}
                   </CardTitle>
                 </div>
-                {m.calories && (
-                  <span className="text-xs font-semibold text-[#757575] flex items-center gap-1">
-                    <Flame
-                      className="w-3.5 h-3.5 text-[#757575]"
-                      strokeWidth={1.5}
-                    />{" "}
-                    {m.calories} kcal
-                  </span>
-                )}
               </CardHeader>
               <CardContent className="space-y-3">
                 <ul className="space-y-1.5 text-xs text-[#757575]">

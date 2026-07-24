@@ -103,7 +103,7 @@ export default function LandingPage() {
       icon: Utensils,
       title: "Mess Planner",
       description:
-        "Dynamic 7-day meal schedules, calorie transparency, and daily meal attendance counters.",
+        "Dynamic 7-day meal schedules and student feedback ratings.",
     },
     {
       icon: ShieldCheck,
